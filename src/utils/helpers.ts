@@ -15,3 +15,10 @@ export function capitalize(value: string): string {
 
   return value.charAt(0).toUpperCase() + value.slice(1);
 }
+
+export function formatCurrency(amount: number): string {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(amount);
+}
